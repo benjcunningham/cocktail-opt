@@ -25,7 +25,7 @@ def test_unique_list_of_ingredients(dataset):
     assert len(dataset.ingredients) == 46
 
 
-def test_iterate_over_recipes(dataset):
+def test_iterate_over_cocktails(dataset):
 
     for cocktail, ingredients in dataset.cocktails:
         assert cocktail
