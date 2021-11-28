@@ -95,7 +95,7 @@ class Dataset:
 
             for ingredient in ingredients:
 
-                col_index = self.cocktails.key_to_index(ingredient)
+                col_index = self.ingredients.key_to_index(ingredient)
                 recipes[row_index, col_index] = 1
 
         return recipes

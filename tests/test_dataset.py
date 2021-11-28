@@ -48,3 +48,12 @@ def test_convert_key_to_index(dataset):
 
     for key in dataset.ingredients.keys:
         dataset.ingredients.key_to_index(key)
+
+
+def test_create_recipes_matrix(dataset):
+
+    recipes = dataset.recipes()
+
+    assert recipes.shape[0] == len(dataset.cocktails)
+    assert recipes.shape[1] == len(dataset.ingredients)
+    assert recipes.sum() == len(dataset.cocktails.data)
