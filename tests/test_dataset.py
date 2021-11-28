@@ -32,6 +32,13 @@ def test_iterate_over_recipes(dataset):
         assert ingredients
 
 
+def test_iterate_over_ingredients(dataset):
+
+    for ingredient, price in dataset.ingredients:
+        assert ingredient
+        assert price >= 0
+
+
 def test_convert_index_to_key(dataset):
 
     for index in range(len(dataset.cocktails)):

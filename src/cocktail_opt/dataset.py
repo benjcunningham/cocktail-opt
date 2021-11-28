@@ -78,6 +78,14 @@ class Ingredients(Table):
 
         self.key = "ingredient"
 
+    def __iter__(self) -> Generator[Tuple[str, float], None, None]:
+
+        for ingredient in self.keys:
+
+            price = self.price(ingredient)
+
+            yield ingredient, price
+
     def price(self, ingredient_or_index: Union[int, str]) -> float:
 
         if isinstance(ingredient_or_index, int):
