@@ -119,6 +119,10 @@ class Dataset:
 
         return recipes
 
+    def prices(self) -> np.ndarray:
+
+        return np.array([price for _, price in self.ingredients], dtype=np.float_)
+
     @classmethod
     def from_paths(cls, cocktails_path: str, ingredients_path: str) -> Dataset:
 

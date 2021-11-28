@@ -77,3 +77,16 @@ def test_create_recipes_matrix(dataset):
 def test_ingredients_returns_correct_price(dataset, ingredient, price):
 
     assert dataset.ingredients.price(ingredient) == price
+
+
+def test_prices_array_matches_individual_prices(dataset):
+
+    prices_array = dataset.prices()
+
+    assert prices_array.sum() == dataset.ingredients.data["price"].sum()
+
+    for index, (ingredient, _) in enumerate(dataset.ingredients):
+
+        price = dataset.ingredients.price(ingredient)
+
+        assert price == prices_array[index]
