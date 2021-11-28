@@ -57,3 +57,16 @@ def test_create_recipes_matrix(dataset):
     assert recipes.shape[0] == len(dataset.cocktails)
     assert recipes.shape[1] == len(dataset.ingredients)
     assert recipes.sum() == len(dataset.cocktails.data)
+
+
+@pytest.mark.parametrize(
+    "ingredient,price",
+    [
+        ("Absinthe", 50),
+        ("Bourbon", 41),
+        ("Gin", 29),
+    ],
+)
+def test_ingredients_returns_correct_price(dataset, ingredient, price):
+
+    assert dataset.ingredients.price(ingredient) == price

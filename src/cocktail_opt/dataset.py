@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from typing import Generator, List, Tuple, Type, TypeVar
+from typing import Generator, List, Tuple, Type, TypeVar, Union
 
 import numpy as np
 import pandas as pd
@@ -77,6 +77,17 @@ class Ingredients(Table):
         super().__init__(data)
 
         self.key = "ingredient"
+
+    def price(self, ingredient_or_index: Union[int, str]) -> float:
+
+        if isinstance(ingredient_or_index, int):
+            ingredient: str = self.index_to_key(ingredient_or_index)
+        else:
+            ingredient = ingredient_or_index
+
+        price = self.data["price"][self.data["ingredient"] == ingredient].values[0]
+
+        return price
 
 
 class Dataset:
