@@ -15,6 +15,27 @@ flake8 = "^4.0.1"
 isort = "^5.10.1"
 mypy = "^0.960"
 pylint = "^2.14.0"
+pytest = "^7.1.2"
+pytest-cov = "^3.0.0"
+
+[tool.coverage.report]
+exclude_lines = ['if __name__ == "__main__":']
+
+[tool.isort]
+ensure_newline_before_comments = true
+force_grid_wrap = 0
+include_trailing_comma = true
+known_first_party = "cocktail_opt"
+known_local_folder = "tests"
+lines_after_imports = 2
+multi_line_output = 3
+profile = "black"
+use_parentheses = true
+
+[tool.mypy]
+disallow_incomplete_defs = true
+disallow_untyped_defs = true
+ignore_missing_imports = true
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
