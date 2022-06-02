@@ -1,6 +1,6 @@
 import pytest
 
-from cocktail_opt.dataset import Table
+from cocktail_opt.dataset import Dataset, Table
 
 
 @pytest.mark.parametrize(
@@ -10,36 +10,36 @@ from cocktail_opt.dataset import Table
         "data/ingredients.csv",
     ],
 )
-def test_load_table_from_path(path):
+def test_load_table_from_path(path: str) -> None:
 
     Table.from_path(path)
 
 
-def test_unique_list_of_cocktails(dataset):
+def test_unique_list_of_cocktails(dataset: Dataset) -> None:
 
     assert len(dataset.cocktails) == 33
 
 
-def test_unique_list_of_ingredients(dataset):
+def test_unique_list_of_ingredients(dataset: Dataset) -> None:
 
     assert len(dataset.ingredients) == 46
 
 
-def test_iterate_over_cocktails(dataset):
+def test_iterate_over_cocktails(dataset: Dataset) -> None:
 
     for cocktail, ingredients in dataset.cocktails:
         assert cocktail
         assert ingredients
 
 
-def test_iterate_over_ingredients(dataset):
+def test_iterate_over_ingredients(dataset: Dataset) -> None:
 
     for ingredient, price in dataset.ingredients:
         assert ingredient
         assert price >= 0
 
 
-def test_convert_index_to_key(dataset):
+def test_convert_index_to_key(dataset: Dataset) -> None:
 
     for index in range(len(dataset.cocktails)):
         dataset.cocktails.index_to_key(index)
@@ -48,7 +48,7 @@ def test_convert_index_to_key(dataset):
         dataset.ingredients.index_to_key(index)
 
 
-def test_convert_key_to_index(dataset):
+def test_convert_key_to_index(dataset: Dataset) -> None:
 
     for key in dataset.cocktails.keys:
         dataset.cocktails.key_to_index(key)
@@ -57,7 +57,7 @@ def test_convert_key_to_index(dataset):
         dataset.ingredients.key_to_index(key)
 
 
-def test_create_recipes_matrix(dataset):
+def test_create_recipes_matrix(dataset: Dataset) -> None:
 
     recipes = dataset.recipes()
 
@@ -74,12 +74,14 @@ def test_create_recipes_matrix(dataset):
         ("Gin", 29),
     ],
 )
-def test_ingredients_returns_correct_price(dataset, ingredient, price):
+def test_ingredients_returns_correct_price(
+    dataset: Dataset, ingredient: str, price: float
+) -> None:
 
     assert dataset.ingredients.price(ingredient) == price
 
 
-def test_prices_array_matches_individual_prices(dataset):
+def test_prices_array_matches_individual_prices(dataset: Dataset) -> None:
 
     prices_array = dataset.prices()
 

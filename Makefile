@@ -1,19 +1,20 @@
-.PHONY: install quality style
-
-check_dirs := src setup.py tests
-
+.PHONY: install
 install:
-	pip install -e ".[dev]"
+	poetry install
 
-quality:
-	black --check $(check_dirs)
-	isort --check-only $(check_dirs)
-	flake8 $(check_dirs)
-	mypy src
+.PHONY: fix
+fix:
+	poetry run black .
+	poetry run isort .
 
-style:
-	black $(check_dirs)
-	isort $(check_dirs)
+.PHONY: quality
+lint:
+	poetry run black --check .
+	poetry run isort --check .
+	poetry run flake8 .
+	poetry run pylint **/*.py
+	poetry run mypy .
 
+.PHONY: test
 test:
-	pytest
+	poetry run pytest
