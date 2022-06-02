@@ -10,9 +10,9 @@ fix:
 .PHONY: quality
 lint:
 	poetry run black --check .
-	poetry run isort --check-only .
+	poetry run isort --check .
 	poetry run flake8 .
-	poetry run pylint .
+	poetry run pylint **/*.py
 	poetry run mypy .
 
 .PHONY: test
