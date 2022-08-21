@@ -1,0 +1,186 @@
+[
+    {
+        "ingredient_name": "Absinthe",
+        "price": 50.0
+    },
+    {
+        "ingredient_name": "Angostura Bitters",
+        "price": 12.0
+    },
+    {
+        "ingredient_name": "Apricot Brandy",
+        "price": 8.0
+    },
+    {
+        "ingredient_name": "Benedictine",
+        "price": 39.0
+    },
+    {
+        "ingredient_name": "Bourbon",
+        "price": 41.0
+    },
+    {
+        "ingredient_name": "Brandy",
+        "price": 47.0
+    },
+    {
+        "ingredient_name": "Calvados",
+        "price": 33.0
+    },
+    {
+        "ingredient_name": "Campari",
+        "price": 32.0
+    },
+    {
+        "ingredient_name": "Cognac",
+        "price": 47.0
+    },
+    {
+        "ingredient_name": "Cream",
+        "price": 0.0
+    },
+    {
+        "ingredient_name": "Creme de Violette",
+        "price": 23.0
+    },
+    {
+        "ingredient_name": "Curacao",
+        "price": 7.0
+    },
+    {
+        "ingredient_name": "Dark Creme de Cacao",
+        "price": 18.0
+    },
+    {
+        "ingredient_name": "Drambuie",
+        "price": 47.0
+    },
+    {
+        "ingredient_name": "Dry Vermouth",
+        "price": 11.0
+    },
+    {
+        "ingredient_name": "Egg White",
+        "price": 0.0
+    },
+    {
+        "ingredient_name": "Egg Yolk",
+        "price": 0.0
+    },
+    {
+        "ingredient_name": "Fernet-Branca",
+        "price": 33.0
+    },
+    {
+        "ingredient_name": "Gin",
+        "price": 29.0
+    },
+    {
+        "ingredient_name": "Green Chartreuse",
+        "price": 60.0
+    },
+    {
+        "ingredient_name": "Grenadine",
+        "price": 7.0
+    },
+    {
+        "ingredient_name": "Jamaican Rum",
+        "price": 32.0
+    },
+    {
+        "ingredient_name": "Lemon Juice",
+        "price": 3.0
+    },
+    {
+        "ingredient_name": "Light Cream",
+        "price": 0.0
+    },
+    {
+        "ingredient_name": "Lime Juice",
+        "price": 3.0
+    },
+    {
+        "ingredient_name": "Maraschino",
+        "price": 40.0
+    },
+    {
+        "ingredient_name": "Orange Bitters",
+        "price": 12.0
+    },
+    {
+        "ingredient_name": "Orange Flower Water",
+        "price": 99999.0
+    },
+    {
+        "ingredient_name": "Orange Juice",
+        "price": 6.0
+    },
+    {
+        "ingredient_name": "Peychaud's Bitters",
+        "price": 10.0
+    },
+    {
+        "ingredient_name": "Pineapple Juice",
+        "price": 4.0
+    },
+    {
+        "ingredient_name": "Port",
+        "price": 9.0
+    },
+    {
+        "ingredient_name": "Raspberry Syrup",
+        "price": 99999.0
+    },
+    {
+        "ingredient_name": "Rye Whiskey",
+        "price": 34.0
+    },
+    {
+        "ingredient_name": "Scotch Whisky",
+        "price": 40.0
+    },
+    {
+        "ingredient_name": "Simple Syrup",
+        "price": 0.0
+    },
+    {
+        "ingredient_name": "Soda",
+        "price": 0.0
+    },
+    {
+        "ingredient_name": "Sugar",
+        "price": 0.0
+    },
+    {
+        "ingredient_name": "Sugar Cane Juice",
+        "price": 99999.0
+    },
+    {
+        "ingredient_name": "Sugar Cube",
+        "price": 0.0
+    },
+    {
+        "ingredient_name": "Sweet Red Vermouth",
+        "price": 13.0
+    },
+    {
+        "ingredient_name": "Triple Sec",
+        "price": 7.0
+    },
+    {
+        "ingredient_name": "Vanilla Extract",
+        "price": 0.0
+    },
+    {
+        "ingredient_name": "Water",
+        "price": 0.0
+    },
+    {
+        "ingredient_name": "White Creme de Menthe",
+        "price": 17.0
+    },
+    {
+        "ingredient_name": "White Rum",
+        "price": 23.0
+    }
+]
