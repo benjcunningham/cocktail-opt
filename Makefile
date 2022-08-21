@@ -17,4 +17,8 @@ lint:
 
 .PHONY: test
 test:
-	poetry run pytest --cov cocktail_opt
+	poetry run pytest \
+		--cov cocktail_opt \
+		--cov-report=html \
+		--cov-report=term \
+		--cov-fail-under=100
