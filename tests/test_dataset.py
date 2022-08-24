@@ -1,3 +1,5 @@
+# pylint: disable=missing-function-docstring
+
 import itertools
 
 from cocktail_opt.dataset import Dataset
