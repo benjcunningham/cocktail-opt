@@ -1,132 +1,110 @@
-from __future__ import annotations
-
-from typing import Generator, List, Tuple, Type, TypeVar, Union
+from dataclasses import dataclass
+from typing import Dict, List
 
 import numpy as np
-import pandas as pd
 
 
-T = TypeVar("T", bound="Table")
+@dataclass
+class Ingredient:
+
+    ingredient_name: str
+    price: float
 
 
-class Table:
-    def __init__(self, data: pd.DataFrame):
+@dataclass
+class Cocktail:
 
-        self.data = data
-
-    @property
-    def key(self) -> str:
-
-        return self._key
-
-    @key.setter
-    def key(self, value: str) -> None:
-
-        self._key = value
-        self._keys = np.sort(self.data[value].unique())
-
-        self._index_to_key = dict(zip(list(range(len(self._keys))), self._keys))
-        self._key_to_index = {val: key for key, val in self._index_to_key.items()}
-
-    @property
-    def keys(self) -> np.ndarray:
-
-        return self._keys
-
-    def __len__(self) -> int:
-
-        return len(self._index_to_key)
-
-    def index_to_key(self, index: int) -> str:
-
-        return self._index_to_key[index]
-
-    def key_to_index(self, key: str) -> int:
-
-        return self._key_to_index[key]
-
-    @classmethod
-    def from_path(cls: Type[T], path: str) -> T:
-
-        data = pd.read_csv(path)
-
-        return cls(data)
-
-
-class Cocktails(Table):
-    def __init__(self, data: pd.DataFrame):
-
-        super().__init__(data)
-
-        self.key = "cocktail"
-
-    def __iter__(self) -> Generator[Tuple[str, List[str]], None, None]:
-
-        recipes = self.data.groupby(self.key).agg({"ingredient": list}).reset_index()
-
-        for cocktail in self.keys:
-
-            ings = recipes["ingredient"][recipes["cocktail"] == cocktail].values[0]
-
-            yield cocktail, ings
-
-
-class Ingredients(Table):
-    def __init__(self, data: pd.DataFrame):
-
-        super().__init__(data)
-
-        self.key = "ingredient"
-
-    def __iter__(self) -> Generator[Tuple[str, float], None, None]:
-
-        for ingredient in self.keys:
-
-            price = self.price(ingredient)
-
-            yield ingredient, price
-
-    def price(self, ingredient_or_index: Union[int, str]) -> float:
-
-        if isinstance(ingredient_or_index, int):
-            ingredient: str = self.index_to_key(ingredient_or_index)
-        else:
-            ingredient = ingredient_or_index
-
-        price = self.data["price"][self.data["ingredient"] == ingredient].values[0]
-
-        return price
+    cocktail_name: str
+    ingredient_names: List[str]
 
 
 class Dataset:
-    def __init__(self, cocktails: Cocktails, ingredients: Ingredients):
+    r"""
+
+    Cocktails...
+
+    .. code-block:: json
+
+        {
+            "Americano": [
+                "Campari",
+                "Sweet Red Vermouth",
+                "Soda"
+            ],
+            "Bellini": [
+                "Prosecco",
+                "White Peach Puree"
+            ]
+        }
+
+    Ingredients...
+
+    .. code-block:: json
+
+        {
+            "Campari": 0,
+            "Soda": 0,
+            "Sweet Red Vermouth": 0,
+            "Prosecco": 0,
+            "White Peach Puree": 0
+        }
+
+    """
+
+    def __init__(
+        self,
+        cocktails: Dict[str, Cocktail],
+        ingredients: Dict[str, Ingredient],
+    ) -> None:
 
         self.cocktails = cocktails
         self.ingredients = ingredients
 
     def recipes(self) -> np.ndarray:
+        r"""Create a logical matrix for recipes.
 
-        recipes = np.zeros((len(self.cocktails), len(self.ingredients)))
+        Creates an :math:`N \times P` logical matrix, where :math:`N` is the number of
+        cocktails and :math:`P` is the number of ingredients, representing the
+        ingredients required for each cocktail.
 
-        for cocktail, ingredients in self.cocktails:
+        Since the class assumes both ``cocktails`` and ``ingredients`` are ordered
+        dictionaries (i.e., regular dictionaries in Python >=3.7), the indexes along
+        each axis correspond to the keys at those indices in the respective dictionary.
 
-            row_index = self.cocktails.key_to_index(cocktail)
+        Returns:
+            The logical matrix.
 
-            for ingredient in ingredients:
+        """
 
-                col_index = self.ingredients.key_to_index(ingredient)
+        n_cocktails = len(self.cocktails)
+        n_ingredients = len(self.ingredients)
+
+        recipes = np.zeros((n_cocktails, n_ingredients))
+
+        for cocktail in self.cocktails.values():
+
+            row_index = list(self.cocktails.keys()).index(cocktail.cocktail_name)
+
+            for ingredient_name in cocktail.ingredient_names:
+
+                col_index = list(self.ingredients.keys()).index(ingredient_name)
                 recipes[row_index, col_index] = 1
 
         return recipes
 
     def prices(self) -> np.ndarray:
+        r"""Create an array of ingredient prices.
 
-        return np.array([price for _, price in self.ingredients], dtype=np.float_)
+        Creates a :math:`P`-length array corresponding to the cost of each respective
+        index in the ingredient dictionary.
 
-    @classmethod
-    def from_paths(cls, cocktails_path: str, ingredients_path: str) -> Dataset:
+        Returns:
+            The price array.
 
-        cocktails = Cocktails.from_path(cocktails_path)
-        ingredients = Ingredients.from_path(ingredients_path)
+        """
 
-        return cls(cocktails, ingredients)
+        ingredient_prices = [
+            ingredient.price for ingredient in self.ingredients.values()
+        ]
+
+        return np.array(ingredient_prices, dtype=np.float_)

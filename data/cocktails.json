@@ -1,0 +1,289 @@
+[
+    {
+        "cocktail_name": "Alexander",
+        "ingredient_names": [
+            "Cognac",
+            "Dark Creme de Cacao",
+            "Light Cream"
+        ]
+    },
+    {
+        "cocktail_name": "Americano",
+        "ingredient_names": [
+            "Campari",
+            "Sweet Red Vermouth",
+            "Soda"
+        ]
+    },
+    {
+        "cocktail_name": "Angel Face",
+        "ingredient_names": [
+            "Gin",
+            "Apricot Brandy",
+            "Calvados"
+        ]
+    },
+    {
+        "cocktail_name": "Aviation",
+        "ingredient_names": [
+            "Gin",
+            "Lemon Juice",
+            "Maraschino",
+            "Creme de Violette"
+        ]
+    },
+    {
+        "cocktail_name": "Between the Sheets",
+        "ingredient_names": [
+            "White Rum",
+            "Cognac",
+            "Triple Sec",
+            "Lemon Juice"
+        ]
+    },
+    {
+        "cocktail_name": "Boulevardier",
+        "ingredient_names": [
+            "Bourbon",
+            "Sweet Red Vermouth",
+            "Campari"
+        ]
+    },
+    {
+        "cocktail_name": "Brandy Crusta",
+        "ingredient_names": [
+            "Brandy",
+            "Maraschino",
+            "Curacao",
+            "Lemon Juice",
+            "Simple Syrup",
+            "Angostura Bitters"
+        ]
+    },
+    {
+        "cocktail_name": "Casino",
+        "ingredient_names": [
+            "Gin",
+            "Maraschino",
+            "Lemon Juice",
+            "Orange Bitters"
+        ]
+    },
+    {
+        "cocktail_name": "Clover Club",
+        "ingredient_names": [
+            "Gin",
+            "Lemon Juice",
+            "Raspberry Syrup",
+            "Dry Vermouth",
+            "Egg White"
+        ]
+    },
+    {
+        "cocktail_name": "Daiquiri",
+        "ingredient_names": [
+            "White Rum",
+            "Lime Juice",
+            "Sugar"
+        ]
+    },
+    {
+        "cocktail_name": "Dry Martini",
+        "ingredient_names": [
+            "Gin",
+            "Dry Vermouth"
+        ]
+    },
+    {
+        "cocktail_name": "Gin Fizz",
+        "ingredient_names": [
+            "Gin",
+            "Lemon Juice",
+            "Simple Syrup",
+            "Soda"
+        ]
+    },
+    {
+        "cocktail_name": "Hanky Panky",
+        "ingredient_names": [
+            "Gin",
+            "Sweet Red Vermouth",
+            "Fernet-Branca"
+        ]
+    },
+    {
+        "cocktail_name": "John Collins",
+        "ingredient_names": [
+            "Gin",
+            "Lemon Juice",
+            "Simple Syrup",
+            "Soda"
+        ]
+    },
+    {
+        "cocktail_name": "Last Word",
+        "ingredient_names": [
+            "Gin",
+            "Lime Juice",
+            "Green Chartreuse",
+            "Maraschino"
+        ]
+    },
+    {
+        "cocktail_name": "Manhattan",
+        "ingredient_names": [
+            "Rye Whiskey",
+            "Sweet Red Vermouth",
+            "Angostura Bitters"
+        ]
+    },
+    {
+        "cocktail_name": "Martinez",
+        "ingredient_names": [
+            "Gin",
+            "Sweet Red Vermouth",
+            "Maraschino",
+            "Orange Bitters"
+        ]
+    },
+    {
+        "cocktail_name": "Mary Pickford",
+        "ingredient_names": [
+            "White Rum",
+            "Pineapple Juice",
+            "Grenadine",
+            "Maraschino"
+        ]
+    },
+    {
+        "cocktail_name": "Monkey Gland",
+        "ingredient_names": [
+            "Gin",
+            "Orange Juice",
+            "Absinthe",
+            "Grenadine"
+        ]
+    },
+    {
+        "cocktail_name": "Negroni",
+        "ingredient_names": [
+            "Gin",
+            "Sweet Red Vermouth",
+            "Campari"
+        ]
+    },
+    {
+        "cocktail_name": "Old Fashioned",
+        "ingredient_names": [
+            "Bourbon",
+            "Angostura Bitters",
+            "Sugar Cube",
+            "Water"
+        ]
+    },
+    {
+        "cocktail_name": "Paradise",
+        "ingredient_names": [
+            "Gin",
+            "Apricot Brandy",
+            "Orange Juice"
+        ]
+    },
+    {
+        "cocktail_name": "Planter's Punch",
+        "ingredient_names": [
+            "Jamaican Rum",
+            "Lime Juice",
+            "Sugar Cane Juice"
+        ]
+    },
+    {
+        "cocktail_name": "Porto Flip",
+        "ingredient_names": [
+            "Brandy",
+            "Port",
+            "Egg Yolk"
+        ]
+    },
+    {
+        "cocktail_name": "Ramos Fizz",
+        "ingredient_names": [
+            "Gin",
+            "Lime Juice",
+            "Lemon Juice",
+            "Simple Syrup",
+            "Cream",
+            "Egg White",
+            "Orange Flower Water",
+            "Vanilla Extract",
+            "Soda"
+        ]
+    },
+    {
+        "cocktail_name": "Rusty Nail",
+        "ingredient_names": [
+            "Scotch Whisky",
+            "Drambuie"
+        ]
+    },
+    {
+        "cocktail_name": "Sazerac",
+        "ingredient_names": [
+            "Cognac",
+            "Absinthe",
+            "Sugar Cube",
+            "Peychaud's Bitters"
+        ]
+    },
+    {
+        "cocktail_name": "Sidecar",
+        "ingredient_names": [
+            "Cognac",
+            "Triple Sec",
+            "Lemon Juice"
+        ]
+    },
+    {
+        "cocktail_name": "Stinger",
+        "ingredient_names": [
+            "Cognac",
+            "White Creme de Menthe"
+        ]
+    },
+    {
+        "cocktail_name": "Tuxedo",
+        "ingredient_names": [
+            "Gin",
+            "Dry Vermouth",
+            "Maraschino",
+            "Absinthe",
+            "Orange Bitters"
+        ]
+    },
+    {
+        "cocktail_name": "Vieux Carre",
+        "ingredient_names": [
+            "Rye Whiskey",
+            "Cognac",
+            "Sweet Red Vermouth",
+            "Benedictine",
+            "Peychaud's Bitters"
+        ]
+    },
+    {
+        "cocktail_name": "Whiskey Sour",
+        "ingredient_names": [
+            "Bourbon",
+            "Lemon Juice",
+            "Simple Syrup"
+        ]
+    },
+    {
+        "cocktail_name": "White Lady",
+        "ingredient_names": [
+            "Gin",
+            "Triple Sec",
+            "Lemon Juice"
+        ]
+    }
+]
