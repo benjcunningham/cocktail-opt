@@ -6,6 +6,30 @@ import numpy as np
 
 @dataclass
 class Ingredient:
+    r"""Ingredient dataclass.
+
+    A representation of an ingredient, including the name of the ingredient and the
+    price. While not explicitly required, the canonical way to serialize multiple
+    ingredients as JSON is in the following structure:
+
+    .. code-block:: json
+
+        [
+            {
+                "ingredient_name": "Absinthe",
+                "price": 50.0
+            },
+            {
+                "ingredient_name": "Angostura Bitters",
+                "price": 12.0
+            },
+        ]
+
+    Args:
+        ingredient_name: Name of the ingredient.
+        price: Price of the ingredient.
+
+    """
 
     ingredient_name: str
     price: float
@@ -13,41 +37,55 @@ class Ingredient:
 
 @dataclass
 class Cocktail:
+    r"""Cocktail dataclass.
+
+    A representation of a cocktail, including the name of the cocktail and the component
+    ingredients. While not explicitly required, the canonical way to serialize multiple
+    cocktails as JSON is in the following structure:
+
+    .. code-block:: json
+
+        [
+            {
+                "cocktail_name": "Alexander",
+                "ingredient_names": [
+                    "Cognac",
+                    "Dark Creme de Cacao",
+                    "Light Cream"
+                ]
+            },
+            {
+                "cocktail_name": "Americano",
+                "ingredient_names": [
+                    "Campari",
+                    "Sweet Red Vermouth",
+                    "Soda"
+                ]
+            }
+        ]
+
+    Args:
+        cocktail_name: Name of the cocktail:
+        ingredient_names: List of names of ingredients.
+
+    """
 
     cocktail_name: str
     ingredient_names: List[str]
 
 
 class Dataset:
-    r"""
+    r"""Dataset converter for linear programming.
 
-    Cocktails...
+    A class for converting hash maps of :class:`cocktail_opt.dataset.Cocktail` and hash
+    maps of :class:`cocktail_opt.dataset.Ingredient` into numerical matrices appropriate
+    for use in a linear programming formulation.
 
-    .. code-block:: json
-
-        {
-            "Americano": [
-                "Campari",
-                "Sweet Red Vermouth",
-                "Soda"
-            ],
-            "Bellini": [
-                "Prosecco",
-                "White Peach Puree"
-            ]
-        }
-
-    Ingredients...
-
-    .. code-block:: json
-
-        {
-            "Campari": 0,
-            "Soda": 0,
-            "Sweet Red Vermouth": 0,
-            "Prosecco": 0,
-            "White Peach Puree": 0
-        }
+    Args:
+        cocktails: Dictionary of (cocktail name, :class:`cocktail_opt.dataset.Cocktail`)
+            key-value pairs.
+        ingredients: Dictionary of (ingredient name,
+            :class:`cocktail_opt.dataset.Ingredient`) key-value pairs.
 
     """
 

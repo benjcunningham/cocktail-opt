@@ -1,3 +1,5 @@
+# pylint: disable=missing-function-docstring
+
 import json
 from typing import Dict
 
