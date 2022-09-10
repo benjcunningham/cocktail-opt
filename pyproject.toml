@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "cocktail-opt"
-version = "0.1.0"
+version = "0.2.0"
 description = "Just-for-fun liquor cabinet optimizer"
 authors = ["Ben Cunningham <benjamescunningham@gmail.com>"]
 
